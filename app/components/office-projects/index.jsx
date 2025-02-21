@@ -1,5 +1,5 @@
 import { FaReact, FaPython, FaAws, FaDocker, FaHtml5, FaCss3Alt, FaBitbucket, FaGithub   } from 'react-icons/fa';
-import { SiDjango, SiMysql, SiRedis, SiRabbitmq, SiFastapi, SiJavascript, SiAmazonec2, SiJfrogpipelines  } from 'react-icons/si';
+import { SiDjango, SiMysql, SiRedis, SiRabbitmq, SiFastapi, SiJavascript, SiNewrelic, SiAmazonec2, SiAwsfargate , SiJfrogpipelines, SiAwslambda, SiAmazons3   } from 'react-icons/si';
 import GlowCard from '../helper/glow-card';
 import SectionTitle from '../helper/section-title';
 import OfficeProjectCard from './office-project-card';
@@ -12,10 +12,14 @@ const officeProjects = [
     duration: "2023 - Present",
     techStack: [
       { name: "Python", icon: FaPython },
-      { name: "Django", icon: SiDjango },
       { name: "FastAPI", icon: SiFastapi },
       { name: "Docker", icon: FaDocker },
-      { name: "GIThub", icon: FaGithub }
+      { name: "AwsLambda", icon: SiAwslambda },
+      { name: "Awsfargate ", icon: SiAwsfargate  },
+      { name: "Awsfargate ", icon: SiAwsfargate  },
+      { name: "AwsS3", icon: SiAmazons3 },
+      { name: "GitHub", icon: FaGithub }, 
+      { name: "Newrelic", icon: SiNewrelic }, 
     ],
     contributions: [
       "Developed core backend services using Django and FastAPI",
