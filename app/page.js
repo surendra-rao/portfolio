@@ -31,13 +31,13 @@ export default async function Home() {
 
   return (
     <>
-      <OfficeProjects />
       <HeroSection profile={profile} />
-      <GitStats />
+      <OfficeProjects />
       <Projects
         projects={projects.items}
         profile={profile}
       />
+      <GitStats />
       <GitLanguage />
       {/* <Rank /> */}
       {/* <Contributions /> */}

@@ -1,147 +1,127 @@
 // @flow strict
-
 import { userData } from "@/data/user-data";
 import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
-import { SiLeetcode } from "react-icons/si";
+import { FaPython, FaAws, FaDocker } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md'; 
+import { SiDjango, SiFastapi, SiFlask } from 'react-icons/si';
 
 function HeroSection({ profile }) {
+  const professionalSummary = "Passionate Python Developer with 2.6+ years of experience in building scalable web applications and RESTful APIs. Specialized in Django, FastAPI, and AWS cloud services with a strong focus on code quality and performance optimization.";
 
   return (
     <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
-      <div className="grid grid-cols-1 items-center md:grid-cols-2 lg:gap-12 gap-y-8" style={{display: 'block'}}>
-        <div className="flex flex-col items-start justify-center rounded-lg p-3 lg:py-5 lg:px-12 bg-primary-bg h-full">
-          <div className="flex w-full justify-center">
+      <div className="w-full max-w-5xl px-4">
+        <div className="flex flex-col md:flex-row gap-6 mb-8">
+          <div className="md:w-1/3 bg-primary-bg rounded-xl p-6 border border-[#1b2c68a0]">
             <Image
               src={profile.avatar_url}
-              width={128}
-              height={128}
+              width={200}
+              height={200}
               alt={profile.name}
-              className="rounded-full transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
+              className="rounded-xl w-full transition-all duration-300 hover:scale-105"
             />
           </div>
-          <p className="text-gray-300 text-sm lg:text-base my-4 lg:my-6 text-center">
-            {profile.bio}
-          </p>
 
-          <div className="w-full flex justify-center items-center gap-5">
-            <Link
-              href={userData.github}
-              target='_blank'
-              className="transition-all text-teal-500 hover:scale-125 duration-300"
-            >
-              <BsGithub size={24} />
-            </Link>
-            <Link
-              href={userData.linkedIn}
-              target='_blank'
-              className="transition-all text-teal-500 hover:scale-125 duration-300"
-            >
-              <BsLinkedin size={24} />
-            </Link>
-            
+          <div className="md:w-2/3 bg-primary-bg rounded-xl p-6 border border-[#1b2c68a0]">
+            <h1 className="text-2xl font-bold text-primary-title mb-2">{profile.name}</h1>
+            <h2 className="text-xl text-primary-text mb-2">Python Developer @{profile.company}</h2>
+            <p className="text-primary-text">{profile.location}</p>
+            <p className="text-primary-text mt-4">{professionalSummary}</p>
           </div>
-
-          <div className="w-full justify-center flex items-center gap-3 mt-6">
-            <Link target="_blank" href={userData.resume} className="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600">
-              <button className="px-3 text-xs md:px-4 py-2 md:py-2.5 bg-[#0d1224] rounded-full border-none text-center font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out  md:font-semibold flex items-center gap-1 hover:gap-3">
-                <span>Get Resume</span>
-                <MdDownload size={16} />
-              </button>
-            </Link>
-          </div>
-
         </div>
 
-        <div className="h-full from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
-          <div className="flex flex-row">
-            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-            <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-          </div>
-          <div className="px-4 lg:px-8 py-5">
-            <div className="flex flex-row space-x-2">
-              <div className="h-3 w-3 rounded-full bg-red-500"></div>
-              <div className="h-3 w-3 rounded-full bg-orange-400"></div>
-              <div className="h-3 w-3 rounded-full bg-green-400"></div>
+        <div className="bg-primary-bg rounded-xl p-6 mb-8 border border-[#1b2c68a0]">
+          <h2 className="text-xl font-semibold text-primary-title mb-4 text-center">EXPERTISE</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Backend - added justify-start */}
+            <div className="flex items-center gap-3 text-primary-text justify-center">
+              <div className="flex gap-2">
+                <SiDjango className="text-2xl" />
+                <SiFastapi className="text-2xl" />
+                <SiFlask className="text-2xl" />
+              </div>
+              <span>Django, FastAPI, Flask</span>
+            </div>
+
+            {/* Web Apps - added justify-start */}
+            <div className="flex items-center gap-3 text-primary-text justify-center">
+              <FaPython className="text-2xl" />
+              <span>Web Apps & APIs</span>
+            </div>
+
+            {/* Cloud & DevOps - added justify-start */}
+            <div className="flex items-center gap-3 text-primary-text justify-center">
+              <div className="flex gap-2">
+                <FaAws className="text-2xl" />
+                <FaDocker className="text-2xl" />
+              </div>
+              <span>AWS, CI/CD</span>
             </div>
           </div>
-          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
-            <code className="font-mono text-xs md:text-sm lg:text-base">
-              <div className="blink">
-                <span className="mr-2 text-violet-400">coder</span>
-                <span className="mr-2 text-pink-400">=</span>
-                <span className="text-gray-400">{'{'}</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-                <span className="text-gray-400">{`'`}</span>
-                <span className="text-green-400">{profile.name}</span>
-                <span className="text-gray-400">{`',`}</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">company:</span>
-                <span className="text-gray-400">{`'`}</span>
-                <span className="text-green-400">{profile.company}</span>
-                <span className="text-gray-400">{`',`}</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">location:</span>
-                <span className="text-gray-400">{`'`}</span>
-                <span className="text-green-400">{profile.location}</span>
-                <span className="text-gray-400">{`',`}</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">Technical Skills:</span>
-                <span className="text-gray-400">{`['`}</span>
-                {
-                  userData.technical_skills.map((skill, i) => (
-                    <>
-                      <span className="text-cyan-400">{skill}</span>
-                      {
-                        i !== userData.technical_skills.length - 1 &&
-                        <span className="text-gray-400">{"', '"}</span>
-                      }
-                    </>
-                  ))
-                }
-                <span className="text-gray-400">{"'],"}</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">Soft Skills:</span>
-                <span className="text-gray-400">{`['`}</span>
-                {
-                  userData.soft_skills.map((skill, i) => (
-                    <>
-                      <span className="text-cyan-400">{skill}</span>
-                      {
-                        i !== userData.soft_skills.length - 1 &&
-                        <span className="text-gray-400">{"', '"}</span>
-                      }
-                    </>
-                  ))
-                }
-                <span className="text-gray-400">{"'],"}</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">repositories:</span>
-                <span className="text-orange-400">{profile.public_repos}</span>
-                <span className="text-gray-400">,</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">hireable:</span>
-                <span className="text-orange-400">{profile?.hireable.toString()}</span>
-                <span className="text-gray-400">,</span>
-              </div>
-              <div><span className="text-gray-400">{`};`}</span></div>
-            </code>
+        </div>
+
+        {/* Bottom Cards Row */}
+        <div className="flex flex-col md:flex-row gap-6 mb-8">
+          {/* Experience Card - unchanged */}
+          <div className="md:w-1/2 bg-primary-bg rounded-xl p-6 border border-[#1b2c68a0]">
+            <h2 className="text-xl font-semibold text-primary-title mb-4">Experience</h2>
+            <div className="flex flex-col gap-2">
+              <p className="text-primary-text">2.6+ Years Professional</p>
+              <p className="text-primary-text">Public Repos: {profile.public_repos}</p>
+              <p className="text-primary-text">Open to Work: {profile.hireable ? "Yes" : "No"}</p>
+            </div>
           </div>
+
+          {/* Contact Card - updated with email icon */}
+          <div className="md:w-1/2 bg-primary-bg rounded-xl p-6 border border-[#1b2c68a0]">
+            <h2 className="text-xl font-semibold text-primary-title mb-4">Connect</h2>
+            <div className="flex items-center gap-4">
+              <Link
+                href={userData.github}
+                target='_blank'
+                className="transition-all text-primary-icon hover:scale-110 duration-300"
+                aria-label="GitHub Profile"
+              >
+                <BsGithub size={28} />
+              </Link>
+              <Link
+                href={userData.linkedIn}
+                target='_blank'
+                className="transition-all text-primary-icon hover:scale-110 duration-300"
+                aria-label="LinkedIn Profile"
+              >
+                <BsLinkedin size={28} />
+              </Link>
+              <Link
+                href={`mailto:${userData.email}`}
+                className="transition-all text-primary-icon hover:scale-110 duration-300"
+                aria-label="Email Contact"
+              >
+                <MdEmail size={28} />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Resume Button - unchanged */}
+        <div className="flex justify-center">
+          <Link 
+            href={userData.resume} 
+            target="_blank" 
+            className="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
+          >
+            <button className="px-6 py-3 bg-primary-bg rounded-full text-white font-medium flex items-center gap-2 hover:gap-3 transition-all duration-300">
+              <span>GET RESUME</span>
+              <MdDownload size={20} />
+            </button>
+          </Link>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default HeroSection;
