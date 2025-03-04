@@ -1,7 +1,7 @@
 # Portfolio
 
 
-## View live preview [here](https://my-github-portfolio.netlify.app/)
+## View live preview [here](https://portfolio-5mujb2rdt-b-surendra-raos-projects.vercel.app/)
 
 ---
 
