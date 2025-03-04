@@ -6,10 +6,10 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdDownload } from "react-icons/md";
 import { FaPython, FaAws, FaDocker } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md'; 
-import { SiDjango, SiFastapi, SiFlask } from 'react-icons/si';
+import { SiDjango, SiFastapi, SiFlask, SiMysql, SiJfrogpipelines, SiGithubactions } from 'react-icons/si';
 
 function HeroSection({ profile }) {
-  const professionalSummary = "Passionate Python Developer with 2.6+ years of experience in building scalable web applications and RESTful APIs. Specialized in Django, FastAPI, and AWS cloud services with a strong focus on code quality and performance optimization.";
+  const professionalSummary = `Passionate Python Developer with ${userData.experience} of experience in building scalable web applications and RESTful APIs. Specialized in Django, FastAPI, and AWS cloud services with a strong focus on code quality and performance optimization.`;
 
   return (
     <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
@@ -32,44 +32,49 @@ function HeroSection({ profile }) {
             <p className="text-primary-text mt-4">{professionalSummary}</p>
           </div>
         </div>
-
+        
+        {/* Expertise section with responsive fixes */}
         <div className="bg-primary-bg rounded-xl p-6 mb-8 border border-[#1b2c68a0]">
           <h2 className="text-xl font-semibold text-primary-title mb-4 text-center">EXPERTISE</h2>
+          
+          {/* Changed from flex-row to grid for better mobile responsiveness */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Backend - added justify-start */}
-            <div className="flex items-center gap-3 text-primary-text justify-center">
-              <div className="flex gap-2">
-                <SiDjango className="text-2xl" />
+            {/* First expertise item */}
+            <div className="flex flex-col items-center text-center gap-3 text-primary-text">
+              <div className="flex gap-2 flex-wrap justify-center">
+                <SiDjango className="text-2xl" /> 
                 <SiFastapi className="text-2xl" />
                 <SiFlask className="text-2xl" />
+                <SiMysql className="text-2xl" />
               </div>
-              <span>Django, FastAPI, Flask</span>
+              <span className="text-sm">Django, FastAPI, Flask, MySQL</span>
             </div>
 
-            {/* Web Apps - added justify-start */}
-            <div className="flex items-center gap-3 text-primary-text justify-center">
-              <FaPython className="text-2xl" />
-              <span>Web Apps & APIs</span>
+            {/* Second expertise item */}
+            <div className="flex flex-col items-center text-center gap-3 text-primary-text">
+              <FaPython className="text-2xl" /> 
+              <span className="text-sm">Web Apps & APIs</span>
             </div>
 
-            {/* Cloud & DevOps - added justify-start */}
-            <div className="flex items-center gap-3 text-primary-text justify-center">
+            {/* Third expertise item */}
+            <div className="flex flex-col items-center text-center gap-3 text-primary-text">
               <div className="flex gap-2">
                 <FaAws className="text-2xl" />
                 <FaDocker className="text-2xl" />
+                <SiJfrogpipelines className="text-2xl" />
+                <SiGithubactions className="text-2xl" />
               </div>
-              <span>AWS, CI/CD</span>
+              <span className="text-sm">AWS, Docker, CI/CD, GitHub Actions</span>
             </div>
           </div>
         </div>
 
         {/* Bottom Cards Row */}
         <div className="flex flex-col md:flex-row gap-6 mb-8">
-          {/* Experience Card - unchanged */}
           <div className="md:w-1/2 bg-primary-bg rounded-xl p-6 border border-[#1b2c68a0]">
             <h2 className="text-xl font-semibold text-primary-title mb-4">Experience</h2>
             <div className="flex flex-col gap-2">
-              <p className="text-primary-text">2.6+ Years Professional</p>
+              <p className="text-primary-text">{userData.experience} Professional</p>
               <p className="text-primary-text">Public Repos: {profile.public_repos}</p>
               <p className="text-primary-text">Open to Work: {profile.hireable ? "Yes" : "No"}</p>
             </div>

@@ -1,12 +1,4 @@
-# GitHub Portfolio
-
-### If you're struggling to create a portfolio website that looks professional, you don't have to search any further. You can use this GitHub Portfolio template to create your very own personalized portfolio using just your GitHub username! The website is designed to be user-friendly and easily customizable, which makes it an ideal solution for developers and freelancers alike.
-
----
-
-# Demo :movie_camera:
-
-![httpsgithub abusaid me](https://github.com/surendra-rao/portfolio/assets/77630868/a331f996-1b4d-451a-941f-a15f5ae6de93)
+# Portfolio
 
 
 ## View live preview [here](https://my-github-portfolio.netlify.app/)
@@ -31,12 +23,9 @@ git --version
 
 # Getting Started :dart:
 
-### Fork and Clone the repo
-
-To Fork the repo click on the fork button at the top right of the page. Once the repo is forked open your terminal and perform the following commands
 
 ```
-git clone https://github.com/<YOUR GITHUB USERNAME>/github-portfolio.git
+git clone https://github.com/<YOUR GITHUB USERNAME>/portfolio.git
 
 cd github-portfolio
 ```
@@ -77,6 +66,8 @@ Eg:
 
 ```javascript
 export const userData = {
+  email: 'surendrarao@gmail.com',
+  experience: '2.6+ years',
   githubUser: 'surendra-rao',
   devUsername: "surendra-rao",
   github: 'https://github.com/surendra-rao',
@@ -112,6 +103,3 @@ export const userData = {
 
 ---
 
-## Disclaimer
-
-In this repository, I have used some open source APIs. All credits go to the owners of those repositories.

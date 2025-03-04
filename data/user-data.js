@@ -1,4 +1,6 @@
 export const userData = {
+  email: 'surendrarao@gmail.com',
+  experience: '2.6+ years',
   githubUser: 'surendra-rao',
   devUsername: "surendra-rao",
   github: 'https://github.com/surendra-rao',

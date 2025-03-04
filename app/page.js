@@ -37,8 +37,8 @@ export default async function Home() {
         projects={projects.items}
         profile={profile}
       />
-      <GitStats />
-      <GitLanguage />
+      {/* <GitStats /> */}
+      {/* <GitLanguage /> */}
       {/* <Rank /> */}
       {/* <Contributions /> */}
     </>
