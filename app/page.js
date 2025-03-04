@@ -3,15 +3,15 @@ import Contributions from "./components/contributions";
 import HeroSection from "./components/hero-section";
 import GitLanguage from "./components/language";
 import Projects from "./components/projects";
+import OfficeProjects from './components/office-projects';
 import Rank from "./components/rank";
 import GitStats from "./components/stats";
 
 async function getGitProfile() {
-  const res = await fetch(`https://api.github.com/users/${userData.githubUser}`)
+  const res = await fetch(`https://api.github.com/users/${userData.githubUser}`) //surendra-rao
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
-
   return await res.json();
 };
 
@@ -32,14 +32,15 @@ export default async function Home() {
   return (
     <>
       <HeroSection profile={profile} />
-      <GitStats />
+      <OfficeProjects />
       <Projects
         projects={projects.items}
         profile={profile}
       />
-      <GitLanguage />
-      <Rank />
-      <Contributions />
+      {/* <GitStats /> */}
+      {/* <GitLanguage /> */}
+      {/* <Rank /> */}
+      {/* <Contributions /> */}
     </>
   )
 };
