@@ -66,13 +66,13 @@ Eg:
 
 ```javascript
 export const userData = {
-  email: 'surendrarao@gmail.com',
-  experience: '2.6+ years',
+  email: 'surendrarao012@gmail.com',
+  experience: '3+ years',
   githubUser: 'surendra-rao',
   devUsername: "surendra-rao",
   github: 'https://github.com/surendra-rao',
-  linkedIn: 'www.linkedin.com/in/surendra-rao-bongu-1552ab1a1',
-  resume: "https://drive.google.com/file/d/1My5xxtYekQRb4cjtb7ThrLRACpvqlwif/view?usp=sharing",
+  linkedIn: 'www.linkedin.com/in/surendra-rao-bongu',
+  resume: "https://drive.google.com/file/d/1H02YdNpSLZk1fDxf8gLCWJwqhF7YuPWO/view?usp=sharing",
   skills: ['React', 'NextJS', 'Redux', 'Express', 'NestJS', 'MySql', 'MongoDB', 'Postgres', 'Docker', 'AWS'],
   technical_skills : [
     "Python", "Django", "Django REST Framework", "FastAPI", "MySQL", "MongoDB", "Redis", "Docker", "Git", "HTML", "CSS", "JavaScript", "React.js", "AWS", "Linux", "Swagger",
